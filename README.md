@@ -1,1 +1,1 @@
-## KNN and Linear Regression :bar_chart:
+## KNN and Linear Regression for predict :bar_chart:
