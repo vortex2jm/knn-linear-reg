@@ -9,7 +9,6 @@ from sklearn.linear_model import LinearRegression
 
 from modules.knn import knn_regressor
 from modules.lreg import linear_regressor
-from modules.intervalo_confianca import intervalo_de_confianca
 
 def main():
     # Data reading
@@ -41,10 +40,9 @@ def main():
     print("Avarage MAE [KNN]: ", sum(final_mae_knn)/len(final_mae_knn))
     print('Avarage MAE [LR]: ', sum(final_mae_lr)/len(final_mae_lr))
 
-    print("Intervalo de confiança MAE [KNN, 95%]: ", intervalo_de_confianca(final_mae_knn))
-    print('Intervalo de confiança MAE [LR, 95%]: ', intervalo_de_confianca(final_mae_lr))
-
-    print("media real: ", sum(output)/len(output))
+    average = sum(output)/len(output)
+    print("Average value: ", average)
+    print("MAE for average value: ", mean_absolute_error(output, len(output)*[average]))
     
 if __name__ == "__main__":
    main()
